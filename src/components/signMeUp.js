@@ -1,5 +1,6 @@
 import React from 'react'
 import SignForm from './signForm'
+import CoworkerList from './coworkerList'
 import '../styles/styles.css'
 
 const Sign = () => {
@@ -9,14 +10,7 @@ const Sign = () => {
         <h1 className="f1 flex flex-column">
           <span>Join</span> <span>the</span> <span>team</span>
         </h1>
-        <ul className="pl3 lh-copy">
-          <li>Alexandre</li>
-          <li>Christian</li>
-          <li>Filip</li>
-          <li>Hjalmar</li>
-          <li>Joakim</li>
-          <li>Samuel</li>
-        </ul>
+        <CoworkerList />
       </div>
       <SignForm />
     </div>
