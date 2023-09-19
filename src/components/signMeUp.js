@@ -3,7 +3,7 @@ import SignForm from './signForm'
 import CoworkerList from './coworkerList'
 import '../styles/styles.css'
 
-const Sign = () => {
+const SignMeUp = () => {
   return (
     <div className="flex vh-100 items-center">
       <div className="bg-cogs white pv4 ph5 h-100">
@@ -17,4 +17,4 @@ const Sign = () => {
   )
 }
 
-export default Sign
+export default SignMeUp

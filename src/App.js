@@ -1,10 +1,10 @@
-import Sign from './components/signMeUp'
+import SignMeUp from './components/signMeUp'
 import './styles/styles.css'
 
 function App() {
   return (
     <div className="App">
-      <Sign />
+      <SignMeUp />
     </div>
   )
 }
