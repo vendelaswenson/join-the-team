@@ -1,4 +1,4 @@
-import SignForm from './signForm'
+import SignMeUp from '../signMeUp'
 import { render, cleanup } from '@testing-library/react'
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
@@ -9,7 +9,7 @@ afterEach(() => {
 
 describe('Component', () => {
   it('renders without crashing', async () => {
-    const utils = render(<SignForm />, { wrapper: MemoryRouter })
+    const utils = render(<SignMeUp />, { wrapper: MemoryRouter })
     expect(utils).toMatchSnapshot()
     expect(utils).toBeTruthy()
   })

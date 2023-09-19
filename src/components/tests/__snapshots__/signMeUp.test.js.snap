@@ -5,6 +5,99 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <div
+        class="flex vh-100 items-center"
+      >
+        <div
+          class="bg-cogs white pv4 ph5 h-100"
+        >
+          <h1
+            class="f1 flex flex-column"
+          >
+            <span>
+              Join
+            </span>
+             
+            <span>
+              the
+            </span>
+             
+            <span>
+              team
+            </span>
+          </h1>
+          <div>
+            <h1>
+              List of Names
+            </h1>
+            <ul />
+          </div>
+        </div>
+        <form>
+          <input
+            name="firstName"
+            placeholder="First name"
+          />
+          <select
+            name="category"
+          >
+            <option
+              value=""
+            >
+              Select...
+            </option>
+            <option
+              value="A"
+            >
+              Male
+            </option>
+            <option
+              value="B"
+            >
+              Female
+            </option>
+          </select>
+          <textarea
+            name="aboutYou"
+            placeholder="About you"
+          />
+          <p />
+          <input
+            type="submit"
+          />
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex vh-100 items-center"
+    >
+      <div
+        class="bg-cogs white pv4 ph5 h-100"
+      >
+        <h1
+          class="f1 flex flex-column"
+        >
+          <span>
+            Join
+          </span>
+           
+          <span>
+            the
+          </span>
+           
+          <span>
+            team
+          </span>
+        </h1>
+        <div>
+          <h1>
+            List of Names
+          </h1>
+          <ul />
+        </div>
+      </div>
       <form>
         <input
           name="firstName"
@@ -39,41 +132,6 @@ Object {
         />
       </form>
     </div>
-  </body>,
-  "container": <div>
-    <form>
-      <input
-        name="firstName"
-        placeholder="First name"
-      />
-      <select
-        name="category"
-      >
-        <option
-          value=""
-        >
-          Select...
-        </option>
-        <option
-          value="A"
-        >
-          Male
-        </option>
-        <option
-          value="B"
-        >
-          Female
-        </option>
-      </select>
-      <textarea
-        name="aboutYou"
-        placeholder="About you"
-      />
-      <p />
-      <input
-        type="submit"
-      />
-    </form>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
