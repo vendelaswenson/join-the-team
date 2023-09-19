@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
+import InfoContext from '../store/info-context'
 
 function CoworkerList() {
-  const [names, setNames] = useState([])
+  const { coworkers } = useContext(InfoContext)
 
-  useEffect(() => {
-    fetch('https://run.mocky.io/v3/9118e647-e131-43c7-8668-d99af1abb5a6')
-      .then((response) => response.json())
-      .then((data) => setNames(data.team))
-      .catch((error) => console.error('Error fetching data:', error))
-  }, [])
+  const coworkersArr = coworkers.team
+
+  if (!Array.isArray(coworkersArr)) {
+    return <div>Loading...</div>
+  }
 
   return (
     <div>
       <h1>List of Names</h1>
       <ul>
-        {names.map((name, index) => (
+        {coworkersArr.map((name, index) => (
           <li key={index}>{name}</li>
         ))}
       </ul>
