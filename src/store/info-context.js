@@ -9,7 +9,6 @@ export const InfoContextProvider = ({ children }) => {
   const [coworkers, setCoworkers] = useState([])
 
   useEffect(() => {
-    // Fetch coworkers data from the API when the component mounts
     const fetchCoworkers = async () => {
       try {
         const response = await fetch(
@@ -19,7 +18,7 @@ export const InfoContextProvider = ({ children }) => {
           throw new Error('Error fetching coworkers data')
         }
         const data = await response.json()
-        setCoworkers(data.team || []) // Assuming the API response has a "team" property
+        setCoworkers(data.team || [])
       } catch (error) {
         console.error('Error fetching coworkers:', error)
       }

@@ -2,12 +2,12 @@ import React from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
 const SignForm = ({ onFormSubmit }) => {
-  const { register, handleSubmit } = useForm()
   const methods = useForm()
+  const { register, handleSubmit } = useForm()
 
   const handleLocalSubmit = (data) => {
-    console.log('Form submitted:', data)
-    onFormSubmit(data)
+    const { firstName } = data
+    onFormSubmit(firstName)
   }
 
   return (

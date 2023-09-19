@@ -1,10 +1,16 @@
-// CoworkerList.js
-import React from 'react'
+import React, { useContext } from 'react'
+import InfoContext from '../store/info-context'
 
-function CoworkerList({ coworkers }) {
+function CoworkerList() {
+  const { coworkers } = useContext(InfoContext)
+
+  if (!Array.isArray(coworkers)) {
+    return <div>Loading...</div>
+  }
+
   return (
     <div>
-      <h1>List of Names</h1>
+      <h3>List of Names</h3>
       <ul>
         {coworkers.map((name, index) => (
           <li key={index}>{name}</li>
