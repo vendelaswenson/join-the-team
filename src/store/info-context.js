@@ -1,54 +1,45 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 
-const InfoContext = React.createContext({
+const InfoContext = createContext({
   coworkers: [],
-  postCoworker: () => {},
+  addCoworker: () => {},
 })
 
-export const InfoContextProvider = (props) => {
+export const InfoContextProvider = ({ children }) => {
   const [coworkers, setCoworkers] = useState([])
 
   useEffect(() => {
+    // Fetch coworkers data from the API when the component mounts
     const fetchCoworkers = async () => {
-      const response = await fetch(
-        'https://run.mocky.io/v3/9118e647-e131-43c7-8668-d99af1abb5a6',
-      )
-      const data = await response.json()
-      setCoworkers(data)
+      try {
+        const response = await fetch(
+          'https://run.mocky.io/v3/9118e647-e131-43c7-8668-d99af1abb5a6',
+        )
+        if (!response.ok) {
+          throw new Error('Error fetching coworkers data')
+        }
+        const data = await response.json()
+        setCoworkers(data.team || []) // Assuming the API response has a "team" property
+      } catch (error) {
+        console.error('Error fetching coworkers:', error)
+      }
     }
+
     fetchCoworkers()
   }, [])
 
-  const postCoworker = async (coworkerName) => {
-    try {
-      const response = await fetch(
-        'https://run.mocky.io/v3/9118e647-e131-43c7-8668-d99af1abb5a6',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(coworkerName),
-        },
-      )
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
-      const data = await response.json()
-      return data
-    } catch (error) {
-      throw error
-    }
+  const addCoworker = (name) => {
+    setCoworkers([...coworkers, name])
   }
 
   return (
     <InfoContext.Provider
       value={{
         coworkers,
-        postCoworker,
+        addCoworker,
       }}
     >
-      {props.children}
+      {children}
     </InfoContext.Provider>
   )
 }

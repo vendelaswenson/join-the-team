@@ -1,27 +1,21 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import SignForm from './signForm'
 import CoworkerList from './coworkerList'
-import InfoContext from '../store/info-context'
-import '../styles/styles.css'
 
 const SignMeUp = () => {
-  const [formSubmitted, setFormSubmitted] = useState(false)
-  const [enteredNames, setEnteredNames] = useState([])
-  const { postCoworker } = useContext(InfoContext)
+  const [enteredName, setEnteredName] = useState('')
+  const [showForm, setShowForm] = useState(true)
+  const [coworkers, setCoworkers] = useState([])
 
-  const handleFormSubmit = async (formData) => {
-    console.log(formData)
-    try {
-      const response = await postCoworker({
-        team: [formData.firstName],
-      })
+  const handleFormSubmit = (name) => {
+    // Update the list of coworkers with the entered name
+    setCoworkers([...coworkers, name])
 
-      console.log('Data successfully sent:', response)
-      setFormSubmitted(true)
-      setEnteredNames([...enteredNames, formData.firstName])
-    } catch (error) {
-      console.error('Error sending data:', error)
-    }
+    // Clear the form input
+    setEnteredName('')
+
+    // Hide the form
+    setShowForm(false)
   }
 
   return (
@@ -30,22 +24,27 @@ const SignMeUp = () => {
         <h1 className="f1 flex flex-column">
           <span>Join</span> <span>the</span> <span>team</span>
         </h1>
-        <CoworkerList />
-        {formSubmitted ? (
+        {showForm ? (
+          <>
+            <CoworkerList coworkers={coworkers} />
+            <SignForm
+              enteredName={enteredName}
+              onNameChange={(name) => setEnteredName(name)}
+              onFormSubmit={() => handleFormSubmit(enteredName)}
+            />
+          </>
+        ) : (
           <div>
-            <p>Thank you for signing up! Your information has been received.</p>
+            <p>Thank you for joining!</p>
             <h2>Entered Names:</h2>
             <ul>
-              {enteredNames.map((name, index) => (
+              {coworkers.map((name, index) => (
                 <li key={index}>{name}</li>
               ))}
             </ul>
           </div>
-        ) : (
-          ''
         )}
       </div>
-      {!formSubmitted && <SignForm onFormSubmit={handleFormSubmit} />}
     </div>
   )
 }
