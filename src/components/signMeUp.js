@@ -1,31 +1,27 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import SignForm from './signForm'
 import CoworkerList from './coworkerList'
-import axios from 'axios'
+import InfoContext from '../store/info-context'
 import '../styles/styles.css'
 
 const SignMeUp = () => {
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [enteredNames, setEnteredNames] = useState([])
+  const { postCoworker } = useContext(InfoContext)
 
-  const handleFormSubmit = (formData) => {
-    const { firstName } = formData
-    const dataWithFirstName = {
-      firstName,
+  const handleFormSubmit = async (formData) => {
+    console.log(formData)
+    try {
+      const response = await postCoworker({
+        team: [formData.firstName],
+      })
+
+      console.log('Data successfully sent:', response)
+      setFormSubmitted(true)
+      setEnteredNames([...enteredNames, formData.firstName])
+    } catch (error) {
+      console.error('Error sending data:', error)
     }
-    axios
-      .post(
-        'https://run.mocky.io/v3/9118e647-e131-43c7-8668-d99af1abb5a6',
-        dataWithFirstName,
-      )
-      .then((response) => {
-        console.log('Data successfully sent:', response.data)
-        setFormSubmitted(true)
-        setEnteredNames([...enteredNames, firstName])
-      })
-      .catch((error) => {
-        console.error('Error sending data:', error)
-      })
   }
 
   return (

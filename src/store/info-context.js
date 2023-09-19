@@ -19,14 +19,23 @@ export const InfoContextProvider = (props) => {
     fetchCoworkers()
   }, [])
 
-  const postCoworker = (coworkerBody) => {
-    fetch('http://localhost:3000/update-team', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(coworkerBody),
-    })
+  const postCoworker = async (coworkerName) => {
+    try {
+      const response = await fetch('http://localhost:3010/update-team', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(coworkerName),
+      })
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      const data = await response.json()
+      return data
+    } catch (error) {
+      throw error
+    }
   }
 
   return (
