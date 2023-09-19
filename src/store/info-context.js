@@ -21,13 +21,16 @@ export const InfoContextProvider = (props) => {
 
   const postCoworker = async (coworkerName) => {
     try {
-      const response = await fetch('http://localhost:3010/update-team', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        'https://run.mocky.io/v3/9118e647-e131-43c7-8668-d99af1abb5a6',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(coworkerName),
         },
-        body: JSON.stringify(coworkerName),
-      })
+      )
       if (!response.ok) {
         throw new Error('Network response was not ok')
       }
