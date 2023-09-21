@@ -3,11 +3,15 @@ import { FormProvider, useForm } from 'react-hook-form'
 
 const SignForm = ({ onFormSubmit }) => {
   const methods = useForm()
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, reset } = useForm()
 
   const handleLocalSubmit = (data) => {
     const { firstName } = data
     onFormSubmit(firstName)
+    clearInputFields()
+  }
+  const clearInputFields = () => {
+    reset()
   }
 
   return (
