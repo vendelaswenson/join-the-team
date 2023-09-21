@@ -27,9 +27,7 @@ describe('SignMeUp', () => {
   })
 
   it('submits the form and displays confirmation message', async () => {
-    const { getByPlaceholderText, getByText, queryByText } = render(
-      <SignMeUp />,
-    )
+    const { getByPlaceholderText } = render(<SignMeUp />)
 
     fireEvent.change(getByPlaceholderText('Name'), {
       target: { value: 'John Doe' },
