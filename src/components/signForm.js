@@ -36,12 +36,7 @@ const SignForm = ({ onFormSubmit }) => {
         </div>
         <div className="mv3">
           <input type="checkbox" id="terms" name="terms" />
-          <label htmlFor="terms">
-            I agree to the terms{' '}
-            <span className="white f7">
-              and I'll bring nice fika every friday ;)
-            </span>
-          </label>
+          <label htmlFor="terms">I agree to the terms </label>
         </div>
         <button
           type="submit"
