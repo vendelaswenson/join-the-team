@@ -19,8 +19,10 @@ const SignForm = ({ onFormSubmit }) => {
           Together we re-define the experience of online gaming through
           gamification and novel technical solutions.
         </p>
-        <input {...register('firstName')} placeholder="First name" />
-        <input {...register('email')} placeholder="Email" />
+        <div className="input--container">
+          <input {...register('firstName')} placeholder="Name" />
+          <input {...register('email')} placeholder="Email" />
+        </div>
         <div className="mv3">
           <input type="checkbox" id="terms" name="terms" />
           <label htmlFor="terms">
@@ -32,7 +34,7 @@ const SignForm = ({ onFormSubmit }) => {
         </div>
         <button
           type="submit"
-          className="ph4 pv2 bg-blue white br2 bn mt3 grow pointer"
+          className="form--button ph4 pv2 bg-blue white br2 bn mt3 grow pointer"
           data-ga="submit"
         >
           I'm in, sign me up!
