@@ -16,19 +16,23 @@ const SignMeUp = () => {
 
   return (
     <div className="flex vh-100 items-center">
-      <div className="bg-cogs">
-        <span>Join</span> <span>the</span> <span>team</span>
-      </div>
-      <div className="white pv4 ph5 h-100">
-        {confirmation ? (
-          <p>Register</p>
-        ) : (
-          <>
-            <p>Thank you for joining the team!</p>
-            <CoworkerList coworkers={coworkers} />
-          </>
-        )}
-        <SignForm onFormSubmit={handleFormSubmit} />
+      <div className="site--container">
+        <div className="line--container--span bg-cogs">
+          <span>Join</span> <span>the</span> <span>team</span>
+        </div>
+        <div className="line--container">
+          <div className="white pv4 ph5 h-100">
+            {confirmation ? (
+              <></>
+            ) : (
+              <>
+                <p>Thank you for joining the team!</p>
+                <CoworkerList coworkers={coworkers} />
+              </>
+            )}
+            <SignForm onFormSubmit={handleFormSubmit} />
+          </div>
+        </div>
       </div>
     </div>
   )
