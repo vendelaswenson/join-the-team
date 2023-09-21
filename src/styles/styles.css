@@ -17,6 +17,12 @@
     width: 12rem;
     border-radius: 0.3rem;
     border: none;
+    
+  }
+
+  .form--button:hover {
+    cursor: pointer;
+      transform:scale(1.2,1.2);
   }
 
   .site--container {
@@ -57,7 +63,7 @@
   }
 
   .line--container {
-    margin-top: 12.5rem;
+    margin-top: 10rem;
   }
 
   .line--heading {
@@ -77,6 +83,11 @@
 
   .coworker--list__item {
     margin-top: 0.3rem;
+  }
+
+  .ph5 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   @media screen and (max-width: 768px) {
