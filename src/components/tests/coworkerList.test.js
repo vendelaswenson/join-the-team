@@ -1,16 +1,21 @@
-import CoworkerList from '../coworkerList'
-import { render, cleanup } from '@testing-library/react'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
+import { render } from '@testing-library/react'
+import CoworkerList from '../coworkerList'
 
-afterEach(() => {
-  cleanup()
-})
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useContext: () => ({
+    coworkers: ['John', 'Jane', 'Doe'],
+  }),
+}))
 
-describe('Component', () => {
-  it('renders without crashing', async () => {
-    const utils = render(<CoworkerList />, { wrapper: MemoryRouter })
-    expect(utils).toMatchSnapshot()
-    expect(utils).toBeTruthy()
+describe('CoworkerList', () => {
+  it('renders the list of coworkers', () => {
+    const { getByText } = render(<CoworkerList />)
+
+    expect(getByText('List of Names')).toBeTruthy()
+    expect(getByText('John')).toBeTruthy()
+    expect(getByText('Jane')).toBeTruthy()
+    expect(getByText('Doe')).toBeTruthy()
   })
 })

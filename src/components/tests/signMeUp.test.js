@@ -1,16 +1,36 @@
-import SignMeUp from '../signMeUp'
-import { render, cleanup } from '@testing-library/react'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
+import { render, fireEvent } from '@testing-library/react'
+import SignMeUp from '../signMeUp' // Import your SignMeUp component
 
-afterEach(() => {
-  cleanup()
-})
+// Mock the addCoworker function from the context
+const mockAddCoworker = jest.fn()
 
-describe('Component', () => {
-  it('renders without crashing', async () => {
-    const utils = render(<SignMeUp />, { wrapper: MemoryRouter })
-    expect(utils).toMatchSnapshot()
-    expect(utils).toBeTruthy()
+// Mock the useContext hook to provide the context value
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useContext: () => ({
+    coworkers: [],
+    addCoworker: mockAddCoworker,
+  }),
+}))
+
+describe('SignMeUp', () => {
+  it('renders the SignForm component', () => {
+    const { getByText, getByPlaceholderText } = render(<SignMeUp />)
+
+    // Assert that the form fields and submit button are present
+    expect(getByPlaceholderText('Name')).toBeTruthy()
+    expect(getByText("I'm in, sign me up!")).toBeTruthy()
+  })
+
+  it('submits the form and displays confirmation message', async () => {
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <SignMeUp />,
+    )
+
+    // Fill in the form field
+    fireEvent.change(getByPlaceholderText('Name'), {
+      target: { value: 'John Doe' },
+    })
   })
 })

@@ -1,16 +1,37 @@
-import SignForm from '../signForm'
-import { render, cleanup } from '@testing-library/react'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
+import { render, fireEvent, waitFor } from '@testing-library/react'
+import SignForm from '../SignForm'
 
-afterEach(() => {
-  cleanup()
-})
+const mockOnFormSubmit = jest.fn()
 
-describe('Component', () => {
-  it('renders without crashing', async () => {
-    const utils = render(<SignForm />, { wrapper: MemoryRouter })
-    expect(utils).toMatchSnapshot()
-    expect(utils).toBeTruthy()
+const renderComponent = () => {
+  return render(<SignForm onFormSubmit={mockOnFormSubmit} />)
+}
+
+describe('SignForm', () => {
+  it('renders the form fields and submit button', () => {
+    const { getByPlaceholderText, getByText } = renderComponent()
+
+    expect(getByPlaceholderText('Name')).toBeTruthy()
+    expect(getByPlaceholderText('Email')).toBeTruthy()
+    expect(getByText("I'm in, sign me up!")).toBeTruthy()
+  })
+
+  it('submits the form with the provided data', async () => {
+    const { getByPlaceholderText, getByText } = renderComponent()
+
+    fireEvent.change(getByPlaceholderText('Name'), {
+      target: { value: 'John Doe' },
+    })
+
+    fireEvent.change(getByPlaceholderText('Email'), {
+      target: { value: 'john@example.com' },
+    })
+
+    fireEvent.click(getByText("I'm in, sign me up!"))
+
+    await waitFor(() => {
+      expect(mockOnFormSubmit).toHaveBeenCalledWith('John Doe')
+    })
   })
 })
