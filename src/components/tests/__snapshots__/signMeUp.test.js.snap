@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component renders without crashing 1`] = `
+exports[`renders without crashing 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -9,10 +9,114 @@ Object {
         class="flex vh-100 items-center"
       >
         <div
-          class="bg-cogs white pv4 ph5 h-100"
+          class="site--container"
         >
-          <h1
-            class="f1 flex flex-column"
+          <div
+            class="line--container--span bg-cogs"
+          >
+            <div
+              class="line--container--tags"
+            >
+              <span>
+                Join
+              </span>
+               
+              <span>
+                the
+              </span>
+               
+              <span>
+                team
+              </span>
+            </div>
+            <div
+              class="coworker--list"
+            >
+              <ul />
+            </div>
+          </div>
+          <div
+            class="line--container"
+          >
+            <h2
+              class="line--heading"
+            >
+              Register
+            </h2>
+            <div
+              class="white pv4 ph5 h-100"
+            >
+              <form>
+                <h3
+                  class="navy f4"
+                >
+                  Team player - Be positive - Beat yesterday
+                </h3>
+                <p
+                  class="measure black-60 lh-copy f6"
+                >
+                  Together we re-define the experience of online gaming through gamification and novel technical solutions.
+                </p>
+                <div
+                  class="input--container"
+                >
+                  <input
+                    class="input--field"
+                    name="firstName"
+                    placeholder="Name"
+                  />
+                  <input
+                    class="input--field"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div
+                  class="mv3"
+                >
+                  <input
+                    id="terms"
+                    name="terms"
+                    type="checkbox"
+                  />
+                  <label
+                    for="terms"
+                  >
+                    I agree to the terms
+                    <span
+                      class="invisible--text white f7"
+                    >
+                      and I'll bring nice fika every friday ;)
+                    </span>
+                     
+                  </label>
+                </div>
+                <button
+                  class="form--button ph4 pv2 bg-blue white br2 bn mt3 grow pointer"
+                  data-ga="submit"
+                  type="submit"
+                >
+                  I'm in, sign me up!
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex vh-100 items-center"
+    >
+      <div
+        class="site--container"
+      >
+        <div
+          class="line--container--span bg-cogs"
+        >
+          <div
+            class="line--container--tags"
           >
             <span>
               Join
@@ -25,112 +129,80 @@ Object {
             <span>
               team
             </span>
-          </h1>
-          <div>
-            <h1>
-              List of Names
-            </h1>
+          </div>
+          <div
+            class="coworker--list"
+          >
             <ul />
           </div>
         </div>
-        <form>
-          <input
-            name="firstName"
-            placeholder="First name"
-          />
-          <select
-            name="category"
-          >
-            <option
-              value=""
-            >
-              Select...
-            </option>
-            <option
-              value="A"
-            >
-              Male
-            </option>
-            <option
-              value="B"
-            >
-              Female
-            </option>
-          </select>
-          <textarea
-            name="aboutYou"
-            placeholder="About you"
-          />
-          <p />
-          <input
-            type="submit"
-          />
-        </form>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="flex vh-100 items-center"
-    >
-      <div
-        class="bg-cogs white pv4 ph5 h-100"
-      >
-        <h1
-          class="f1 flex flex-column"
+        <div
+          class="line--container"
         >
-          <span>
-            Join
-          </span>
-           
-          <span>
-            the
-          </span>
-           
-          <span>
-            team
-          </span>
-        </h1>
-        <div>
-          <h1>
-            List of Names
-          </h1>
-          <ul />
+          <h2
+            class="line--heading"
+          >
+            Register
+          </h2>
+          <div
+            class="white pv4 ph5 h-100"
+          >
+            <form>
+              <h3
+                class="navy f4"
+              >
+                Team player - Be positive - Beat yesterday
+              </h3>
+              <p
+                class="measure black-60 lh-copy f6"
+              >
+                Together we re-define the experience of online gaming through gamification and novel technical solutions.
+              </p>
+              <div
+                class="input--container"
+              >
+                <input
+                  class="input--field"
+                  name="firstName"
+                  placeholder="Name"
+                />
+                <input
+                  class="input--field"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div
+                class="mv3"
+              >
+                <input
+                  id="terms"
+                  name="terms"
+                  type="checkbox"
+                />
+                <label
+                  for="terms"
+                >
+                  I agree to the terms
+                  <span
+                    class="invisible--text white f7"
+                  >
+                    and I'll bring nice fika every friday ;)
+                  </span>
+                   
+                </label>
+              </div>
+              <button
+                class="form--button ph4 pv2 bg-blue white br2 bn mt3 grow pointer"
+                data-ga="submit"
+                type="submit"
+              >
+                I'm in, sign me up!
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-      <form>
-        <input
-          name="firstName"
-          placeholder="First name"
-        />
-        <select
-          name="category"
-        >
-          <option
-            value=""
-          >
-            Select...
-          </option>
-          <option
-            value="A"
-          >
-            Male
-          </option>
-          <option
-            value="B"
-          >
-            Female
-          </option>
-        </select>
-        <textarea
-          name="aboutYou"
-          placeholder="About you"
-        />
-        <p />
-        <input
-          type="submit"
-        />
-      </form>
     </div>
   </div>,
   "debug": [Function],

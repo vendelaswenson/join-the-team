@@ -8,6 +8,12 @@ const renderComponent = () => {
   return render(<SignForm onFormSubmit={mockOnFormSubmit} />)
 }
 
+it('renders without crashing', async () => {
+  const utils = render(<SignForm />)
+  expect(utils).toMatchSnapshot()
+  expect(utils).toBeTruthy()
+})
+
 describe('SignForm', () => {
   it('renders the form fields and submit button', () => {
     const { getByPlaceholderText, getByText } = renderComponent()

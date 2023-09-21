@@ -1,78 +1,118 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component renders without crashing 1`] = `
+exports[`renders without crashing 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <form>
-        <input
-          name="firstName"
-          placeholder="First name"
-        />
-        <select
-          name="category"
+        <h3
+          class="navy f4"
         >
-          <option
-            value=""
+          Team player - Be positive - Beat yesterday
+        </h3>
+        <p
+          class="measure black-60 lh-copy f6"
+        >
+          Together we re-define the experience of online gaming through gamification and novel technical solutions.
+        </p>
+        <div
+          class="input--container"
+        >
+          <input
+            class="input--field"
+            name="firstName"
+            placeholder="Name"
+          />
+          <input
+            class="input--field"
+            name="email"
+            placeholder="Email"
+          />
+        </div>
+        <div
+          class="mv3"
+        >
+          <input
+            id="terms"
+            name="terms"
+            type="checkbox"
+          />
+          <label
+            for="terms"
           >
-            Select...
-          </option>
-          <option
-            value="A"
-          >
-            Male
-          </option>
-          <option
-            value="B"
-          >
-            Female
-          </option>
-        </select>
-        <textarea
-          name="aboutYou"
-          placeholder="About you"
-        />
-        <p />
-        <input
+            I agree to the terms
+            <span
+              class="invisible--text white f7"
+            >
+              and I'll bring nice fika every friday ;)
+            </span>
+             
+          </label>
+        </div>
+        <button
+          class="form--button ph4 pv2 bg-blue white br2 bn mt3 grow pointer"
+          data-ga="submit"
           type="submit"
-        />
+        >
+          I'm in, sign me up!
+        </button>
       </form>
     </div>
   </body>,
   "container": <div>
     <form>
-      <input
-        name="firstName"
-        placeholder="First name"
-      />
-      <select
-        name="category"
+      <h3
+        class="navy f4"
       >
-        <option
-          value=""
+        Team player - Be positive - Beat yesterday
+      </h3>
+      <p
+        class="measure black-60 lh-copy f6"
+      >
+        Together we re-define the experience of online gaming through gamification and novel technical solutions.
+      </p>
+      <div
+        class="input--container"
+      >
+        <input
+          class="input--field"
+          name="firstName"
+          placeholder="Name"
+        />
+        <input
+          class="input--field"
+          name="email"
+          placeholder="Email"
+        />
+      </div>
+      <div
+        class="mv3"
+      >
+        <input
+          id="terms"
+          name="terms"
+          type="checkbox"
+        />
+        <label
+          for="terms"
         >
-          Select...
-        </option>
-        <option
-          value="A"
-        >
-          Male
-        </option>
-        <option
-          value="B"
-        >
-          Female
-        </option>
-      </select>
-      <textarea
-        name="aboutYou"
-        placeholder="About you"
-      />
-      <p />
-      <input
+          I agree to the terms
+          <span
+            class="invisible--text white f7"
+          >
+            and I'll bring nice fika every friday ;)
+          </span>
+           
+        </label>
+      </div>
+      <button
+        class="form--button ph4 pv2 bg-blue white br2 bn mt3 grow pointer"
+        data-ga="submit"
         type="submit"
-      />
+      >
+        I'm in, sign me up!
+      </button>
     </form>
   </div>,
   "debug": [Function],

@@ -9,11 +9,15 @@ jest.mock('react', () => ({
   }),
 }))
 
+it('renders without crashing', async () => {
+  const utils = render(<CoworkerList />)
+  expect(utils).toMatchSnapshot()
+  expect(utils).toBeTruthy()
+})
+
 describe('CoworkerList', () => {
   it('renders the list of coworkers', () => {
     const { getByText } = render(<CoworkerList />)
-
-    expect(getByText('List of Names')).toBeTruthy()
     expect(getByText('John')).toBeTruthy()
     expect(getByText('Jane')).toBeTruthy()
     expect(getByText('Doe')).toBeTruthy()

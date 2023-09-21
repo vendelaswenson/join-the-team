@@ -4,14 +4,13 @@ import CoworkerList from './coworkerList'
 import InfoContext from '../store/info-context'
 
 const SignMeUp = () => {
-  const [confirmation, setConfirmation] = useState(true)
+  const [confirmation, setConfirmation] = useState(false)
   const { coworkers, addCoworker } = useContext(InfoContext)
 
   const handleFormSubmit = (enteredName) => {
     // Add the entered name to the coworkers list
     addCoworker(enteredName)
-    // Hide the form
-    setConfirmation(false)
+    setConfirmation(true)
   }
 
   return (
@@ -26,14 +25,8 @@ const SignMeUp = () => {
         <div className="line--container">
           <h2 className="line--heading">Register</h2>
           <div className="white pv4 ph5 h-100">
-            {confirmation ? (
-              <></>
-            ) : (
-              <>
-                <p>Thank you for joining the team!</p>
-              </>
-            )}
             <SignForm onFormSubmit={handleFormSubmit} />
+            {confirmation && <p>Thank you for joining the team!</p>}
           </div>
         </div>
       </div>

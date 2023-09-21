@@ -28,13 +28,13 @@
   .site--container {
     display: flex;
     flex-direction: row;
+    height: 100%;
   }
 
   .line--container--span {
     display: flex;
     flex-direction: column;
     width: 16rem;
-    height: 50rem;
     margin-right: 5rem;
     margin-top: -0.5rem;
     margin-left: -0.5rem;
@@ -55,19 +55,18 @@
   .measure {
     width: 27rem;
     margin-top: 2rem;
+    color: #00000099;
   }
   
   .input--field {
     margin-bottom: 0.8rem;
     height: 1.8rem;
+    border-radius: 0.25rem;
+    border-width: thin;
   }
 
   .line--container {
     margin-top: 10rem;
-  }
-
-  .line--heading {
-    margin-bottom: 4.8rem;
   }
 
   .navy, .measure, .white, .form--button, .coworker--list__item, .line--heading, .line--container--span {
@@ -84,12 +83,16 @@
   .coworker--list__item {
     margin-top: 0.3rem;
   }
-
   .ph5 {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
+  .invisible--text {
+    color: white;
+  }
+
+  
   @media screen and (max-width: 768px) {
     .line--container--span {
       width: 100%;

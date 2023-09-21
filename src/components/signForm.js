@@ -25,18 +25,23 @@ const SignForm = ({ onFormSubmit }) => {
         <div className="input--container">
           <input
             className="input--field"
-            {...register('firstName')}
+            {...register('firstName', { required: true })}
             placeholder="Name"
           />
           <input
             className="input--field"
-            {...register('email')}
+            {...register('email', { required: true })}
             placeholder="Email"
           />
         </div>
         <div className="mv3">
           <input type="checkbox" id="terms" name="terms" />
-          <label htmlFor="terms">I agree to the terms </label>
+          <label htmlFor="terms">
+            I agree to the terms
+            <span className="invisible--text white f7">
+              and I'll bring nice fika every friday ;)
+            </span>{' '}
+          </label>
         </div>
         <button
           type="submit"
