@@ -9,11 +9,12 @@ function CoworkerList() {
   }
 
   return (
-    <div>
-      <h3>List of Names</h3>
+    <div className="coworker--list">
       <ul>
         {coworkers.map((name, index) => (
-          <li key={index}>{name}</li>
+          <li className="coworker--list__item" key={index}>
+            {name}
+          </li>
         ))}
       </ul>
     </div>

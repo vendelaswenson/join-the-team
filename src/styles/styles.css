@@ -27,16 +27,23 @@
   .line--container--span {
     display: flex;
     flex-direction: column;
-    width: 15rem;
-    height: 17rem;
+    width: 16rem;
+    height: 50rem;
     margin-right: 5rem;
     margin-top: -0.5rem;
     margin-left: -0.5rem;
+    margin-bottom: -0.5rem;
     color: white;
     font-size: 3.5rem;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     font-weight: bold;
+  }
+
+  .line--container--tags {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
   }
 
   .measure {
@@ -50,9 +57,24 @@
   }
 
   .line--container {
-    margin-top: 1rem;
+    margin-top: 12.5rem;
   }
 
-  .navy, .measure, .white, .form--button {
+  .line--heading {
+    margin-bottom: 4.8rem;
+  }
+
+  .navy, .measure, .white, .form--button, .coworker--list__item, .line--heading, .line--container--span {
     font-family: sans-serif;
+  }
+
+  .coworker--list {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-top: 2rem;
+    margin-left: -2rem;
+  }
+
+  .coworker--list__item {
+    margin-top: 0.3rem;
   }

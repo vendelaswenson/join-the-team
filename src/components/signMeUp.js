@@ -18,16 +18,19 @@ const SignMeUp = () => {
     <div className="flex vh-100 items-center">
       <div className="site--container">
         <div className="line--container--span bg-cogs">
-          <span>Join</span> <span>the</span> <span>team</span>
+          <div className="line--container--tags">
+            <span>Join</span> <span>the</span> <span>team</span>
+          </div>
+          <CoworkerList coworkers={coworkers} />
         </div>
         <div className="line--container">
+          <h2 className="line--heading">Register</h2>
           <div className="white pv4 ph5 h-100">
             {confirmation ? (
               <></>
             ) : (
               <>
                 <p>Thank you for joining the team!</p>
-                <CoworkerList coworkers={coworkers} />
               </>
             )}
             <SignForm onFormSubmit={handleFormSubmit} />
