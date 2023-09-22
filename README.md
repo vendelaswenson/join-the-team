@@ -8,10 +8,10 @@ Welcome to the Team Registration Web Application! This application allows users 
 - [License](#license)
 
 ## Features
-- Users can enter their name and email to join the team.
-- Form validation ensures that the name and email fields are required.
-- User names are displayed in a list after registration.
-- Responsive design for various screen sizes.
+- Users can enter their name and email to join the team
+- Form validation ensures that the name and email fields are required
+- User names are displayed in a list 
+- Responsive design for various screen sizes
 
 ## Installation
 To run the application locally, follow these steps:
@@ -21,7 +21,7 @@ To run the application locally, follow these steps:
    ```bash
    git clone https://github.com/your-username/team-registration-app.git
 
-2. Navigate to the project directory: cd team-registration-app
+2. Navigate to the project directory: cd join-the-team
 
 3. Install the dependencies: npm install
 
