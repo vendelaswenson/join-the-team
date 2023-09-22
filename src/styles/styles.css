@@ -18,6 +18,8 @@
     width: 12rem;
     border-radius: 0.3rem;
     border: none;
+    transform: 0.2s;
+    font-size: 1rem;
     
   }
 
@@ -77,6 +79,10 @@
     font-family: sans-serif;
   }
 
+  .navy {
+    margin: 20px, 0px;
+  }
+
   .coworker--list {
     font-size: 1.2rem;
     font-weight: normal;
@@ -86,6 +92,7 @@
 
   .coworker--list__item {
     margin-top: 0.3rem;
+    font-size: 1rem;
   }
   .ph5 {
     padding-top: 2rem;
@@ -95,6 +102,11 @@
   .invisible--text {
     color: white;
     font-size: 0.75rem;
+  }
+
+  .ph5 {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   
