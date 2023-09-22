@@ -11,6 +11,7 @@ Welcome to the Team Registration Web Application! This application allows users 
 - Users can enter their name and email to join the team
 - Form validation ensures that the name and email fields are required
 - User names are displayed in a list 
+- Entered name adds to the list of names
 - Responsive design for various screen sizes
 
 ## Installation
@@ -19,7 +20,7 @@ To run the application locally, follow these steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/team-registration-app.git
+   git clone https://github.com/vendelaswenson/join-the-team.git
 
 2. Navigate to the project directory: cd join-the-team
 
