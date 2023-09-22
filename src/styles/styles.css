@@ -18,7 +18,7 @@
     width: 12rem;
     border-radius: 0.3rem;
     border: none;
-    transform: 0.2s;
+    transform: 0.25s ease-out;
     font-size: 1rem;
     
   }
@@ -54,10 +54,6 @@
     flex-direction: column;
     margin-top: 3rem;
     font-size: 3rem;
-  }
-
-  .line--heading {
-    margin-left: 0.2rem;
   }
 
   .measure {
