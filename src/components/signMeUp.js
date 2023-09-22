@@ -8,7 +8,6 @@ const SignMeUp = () => {
   const { coworkers, addCoworker } = useContext(InfoContext)
 
   const handleFormSubmit = (enteredName) => {
-    // Add the entered name to the coworkers list
     addCoworker(enteredName)
     setConfirmation(true)
   }
